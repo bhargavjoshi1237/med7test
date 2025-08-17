@@ -112,6 +112,7 @@ public static function table(Table $table): Table
                 ->sortable()
                 ->toggleable(isToggledHiddenByDefault: true),
         ])
+        ->defaultSort('created_at', 'desc')
         ->filters([
             Tables\Filters\SelectFilter::make('approve')
                 ->label('Status')

@@ -49,7 +49,7 @@ class Home extends Component
             $collections = $collections->where('element_id', '!=', $this->getSaleCollectionProperty()?->id);
         }
 
-        return $collections->inRandomOrder()->first()?->element;
+        return $collections->skip(3)->first()?->element;
     }
 
     public function render(): View

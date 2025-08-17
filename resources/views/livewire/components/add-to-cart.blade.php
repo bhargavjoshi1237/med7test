@@ -1,17 +1,35 @@
 <div>
     <div class="flex gap-4">
-        <div>
-            <label for="quantity"
-                   class="sr-only">
-                Quantity
-            </label>
+        <div class="flex items-center border border-gray-300 rounded-lg">
+            <button type="button"
+                    class="px-3 py-2 text-gray-600 hover:text-black"
+                    onclick="(function(btn){ const input = btn.parentElement.querySelector('input[type=number]'); const v = parseInt(input.value||'1',10) - 1; input.value = v < 1 ? 1 : v; input.dispatchEvent(new Event('input', { bubbles: true })); })(this)">
+                <i class="fa fa-minus text-sm" aria-hidden="true"></i>
+            </button>
 
-            <input class="w-16 px-1 py-4 text-sm text-center transition border border-gray-100 rounded-lg no-spinner"
+            <input class="w-16 text-center border-none focus:ring-0 text-lg font-medium no-spinner"
                    type="number"
                    id="quantity"
                    min="1"
                    value="1"
                    wire:model.live="quantity" />
+
+            <style>
+                input.no-spinner::-webkit-outer-spin-button,
+                input.no-spinner::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+                input.no-spinner {
+                    -moz-appearance: textfield;
+                }
+            </style>
+
+            <button type="button"
+                    class="px-3 py-2 text-gray-600 hover:text-black"
+                    onclick="(function(btn){ const input = btn.parentElement.querySelector('input[type=number]'); const v = parseInt(input.value||'1',10) + 1; input.value = v; input.dispatchEvent(new Event('input', { bubbles: true })); })(this)">
+                <i class="fa fa-plus text-sm" aria-hidden="true"></i>
+            </button>
         </div>
 
         <button type="submit"
