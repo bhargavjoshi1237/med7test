@@ -72,10 +72,8 @@ class AppServiceProvider extends ServiceProvider
             // \Lunar\Admin\Filament\Resources\BrandResource::class => \App\Lunar\Extensions\BrandResources::class
             \Lunar\Admin\Filament\Resources\ProductTypeResource::class => \App\Lunar\Extensions\ProductTypeResource::class,
             \Lunar\Admin\Filament\Resources\ProductResource\Pages\ManageProductAssociations::class => \App\Lunar\Extensions\ProductAssociationExtension::class,
-            \Lunar\Admin\Filament\Resources\OrderResource\Pages\ManageOrder::class => \App\Lunar\Admin\Filament\Resources\ManageOrder::class
-
-
-            
+            // \Lunar\Admin\Filament\Resources\OrderResource\Pages\ManageOrder::class => \App\Lunar\Admin\Filament\Resources\ManageOrder::class,
+               \Lunar\Admin\Filament\Resources\BrandResources\Pages\ListBrands::class => \App\Lunar\Extensions\ListBrands::class,
 
         ]); 
              
